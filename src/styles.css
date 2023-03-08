@@ -38,3 +38,18 @@
   .p-1 {
     padding: 1px;
   }
+
+  .row{
+    display: flex;/*separar en columnas*/
+  }
+
+  .col{
+    flex-grow: 1;/*Se expanda lo mayor posible*/
+    margin-right: 10px;
+  }
+
+  input{
+    display: block;
+    margin: 5px;
+  }
+
