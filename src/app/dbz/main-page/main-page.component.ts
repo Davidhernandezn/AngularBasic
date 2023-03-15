@@ -12,14 +12,25 @@ interface Personaje{
 })
 export class MainPageComponent implements OnInit {
 
+
+  //arrray
+  personajes: Personaje[] = [
+    {
+      nombre:'Goku',
+      poder: 150000
+    },{
+    nombre: 'vegeta',
+    poder: 10000
+    }]
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   nuevo: Personaje={
-     nombre: 'Gohan',
-     poder:30500
+     nombre: '',
+     poder:0
    }
 
    cambiarNombre(event: any){
@@ -28,6 +39,16 @@ export class MainPageComponent implements OnInit {
 
   agregar(){
     //event.preventDefault();//COMPORTAMIENTO NATURAL DEL FORM
+    //trim() limpia espacios
+    if(this.nuevo.nombre.trim().length === 0){
+      return;//salir de este metodo
+    }
     console.log(this.nuevo);
+    this.personajes.push(this.nuevo)
+
+    this.nuevo = {
+      nombre: '',
+      poder:0
+    }
   }
 }

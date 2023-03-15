@@ -1,0 +1,8 @@
+    <h3>Personajes</h3>
+        <hr>
+        <ul>
+            <li *ngFor="let item of personajes">
+                <!-- | number *es un pipe para que lo grafique o muestre como un numero, 
+                traforma vusualmente la informacion-->
+                {{item.nombre}} - {{item.poder | number}}</li>
+        </ul>
