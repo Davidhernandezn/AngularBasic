@@ -3,15 +3,12 @@
 
 <div class="row">
     <div class="col">
-        <app-personajes></app-personajes>
-        <!-- <h3>Personajes</h3>
-        <hr>
-        <ul>
-            <li *ngFor="let item of personajes">
-                <!-- | number *es un pipe para que lo grafique o muestre como un numero, 
-                traforma vusualmente la informacion
-                {{item.nombre}} - {{item.poder | number}}</li>
-        </ul> -->
+        <!--ASOCIARLO A UNA PROPIEDAD DE NUESTRA CLASE
+        = personajes main page component
+        [personajes] propiedad a la que le asociamos valor viene del nombre del input personajes component
+        -->
+        <app-personajes [personajes] = personajes>
+        </app-personajes>
     </div>
 
 
