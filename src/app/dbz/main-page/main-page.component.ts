@@ -24,27 +24,8 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  nuevo: Personaje={
-     nombre: '',
-     poder:0
-   }
-
-   cambiarNombre(event: any){
-    console.log(event.target.value);
-   }
-
-  agregar(){
-    //event.preventDefault();//COMPORTAMIENTO NATURAL DEL FORM
-    //trim() limpia espacios
-    if(this.nuevo.nombre.trim().length === 0){
-      return;//salir de este metodo
-    }
-    console.log(this.nuevo);
-    this.personajes.push(this.nuevo)
-
-    this.nuevo = {
-      nombre: '',
-      poder:0
-    }
+  nuevo:Personaje={ //MANDA LOS DATOS
+    nombre: 'Maestro Roshi',
+    poder:234
   }
 }
