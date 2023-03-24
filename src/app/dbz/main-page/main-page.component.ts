@@ -28,4 +28,13 @@ export class MainPageComponent implements OnInit {
     nombre: 'Maestro Roshi',
     poder:234
   }
+
+  agregarNuevoPersonaje(argumento: Personaje){
+    console.log("nuevo per") 
+    //EL HIJO EMITE EVENTO EL PADRE RECIBE E INTERPRETA, de momento manda personaje
+
+    //manda argumento
+    this.personajes.push(argumento);//Agrega al array
+
+  }
 }

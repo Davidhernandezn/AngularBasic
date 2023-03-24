@@ -16,8 +16,18 @@
         <!-- <p>Personaje: <small>{{nuevo.nombre}}</small></p>
         
         valor del form, NUEVO ESPERA EL VALOR-->
-        <app-agregar [personajes]="personajes"
-        [nuevo]="nuevo"></app-agregar>
+        <!-- <app-agregar [personajes]="personajes"
+        [nuevo]="nuevo"></app-agregar> -->
+
+        <!--SOLO AGREGAR NO MOSTRAR
+        *llamar metodo cuando se dispare
+        *evento click, valor del input, target $event
+        -->
+        <app-agregar 
+        [nuevo]="nuevo"
+        (onNuevoPersonaje)="agregarNuevoPersonaje( $event )"
+        ></app-agregar>
+
     </div>
 
 </div>
