@@ -4,6 +4,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { FormsModule } from '@angular/forms';
 import { PersonajesComponent } from './personajes/personajes.component';
 import { AgregarComponent } from './agregar/agregar.component';
+import { DbzService } from './services/dbz.service';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,10 @@ import { AgregarComponent } from './agregar/agregar.component';
     //EL APP MODULE YA LO TIENE solo lo usa
     //1-IMPORT ANGULAR, 3ROS, CREADO
     FormsModule
+  ],
+  
+  providers:[//array servicios unica instancia como singleton
+    DbzService
   ]
 })
 export class DbzModule { }
