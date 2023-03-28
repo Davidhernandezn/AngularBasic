@@ -10,15 +10,16 @@ import { DbzService } from '../services/dbz.service';
 export class MainPageComponent implements OnInit {
 
 
-  //arrray
-  personajes: Personaje[] = [
-    {
-      nombre:'Goku',
-      poder: 150000
-    },{
-    nombre: 'vegeta',
-    poder: 10000
-    }]
+  // //arrray
+  // personajes: Personaje[] = [
+  //   {
+  //     nombre:'Goku',
+  //     poder: 150000
+  //   },{
+  //   nombre: 'vegeta',
+  //   poder: 10000
+  //   }]
+  //personajes: Personaje[] = [];
 
 
   ngOnInit(): void {
@@ -29,15 +30,25 @@ export class MainPageComponent implements OnInit {
     poder:234
   }
 
-  agregarNuevoPersonaje(argumento: Personaje){
-    console.log("nuevo per") 
+  //arreglo tipado de tipo personajes
+  // get personajes():Personaje[]{
+  //   return this.dbzService.personajes;
+  // }
+
+
+  //agregarNuevoPersonaje(argumento: Personaje){
+    //console.log("nuevo per") 
     //EL HIJO EMITE EVENTO EL PADRE RECIBE E INTERPRETA, de momento manda personaje
     //debugger;
     //manda argumento
-    this.personajes.push(argumento);//Agrega al array
-  }
+    //this.personajes.push(argumento);//Agrega al array
+  //}
 
-  constructor(private dbzService: DbzService){ //Inyeccion de dependencias
+  constructor(){
+
+//  constructor(private dbzService: DbzService){ //Inyeccion de dependencias
+    //al crear componente asignara el valor que se tiene en el servicio 
+    //this.personajes= this.dbzService.personajes;
   }
 
 }

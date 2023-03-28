@@ -6,9 +6,10 @@
         <!--ASOCIARLO A UNA PROPIEDAD DE NUESTRA CLASE
         = personajes main page component
         [personajes] propiedad a la que le asociamos valor viene del nombre del input personajes component
-        -->
+        
         <app-personajes [personajes] = personajes>
-        </app-personajes>
+        </app-personajes>-->
+        <app-personajes> </app-personajes>
     </div>
 
 
@@ -25,8 +26,9 @@
         -->
         <app-agregar 
         [nuevo]="nuevo"
-        (onNuevoPersonaje)="agregarNuevoPersonaje( $event )"
+
         ></app-agregar>
+        <!-- (onNuevoPersonaje)="agregarNuevoPersonaje( $event )" -->
 
     </div>
 
