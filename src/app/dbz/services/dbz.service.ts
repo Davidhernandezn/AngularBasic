@@ -19,7 +19,7 @@ export class DbzService{//export para usarlo afuera
     get personajes(): Personaje[]{ //decimos que retorna un arreglo de personas
         //lo manda por referencia
         return [...this._personajes]; //para evitarlo usar operador spread, usa [ ] por que es un array
-
+    //despues de tener nuestro metodo el getter va a ser notificado
     }
 
 
@@ -27,4 +27,8 @@ export class DbzService{//export para usarlo afuera
         console.log('SERVICE RUNNING..')
     }
 
+
+    agregarPersonaje(personaje: Personaje){
+        this._personajes.push(personaje);
+    }
 }

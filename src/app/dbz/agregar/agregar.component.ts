@@ -1,5 +1,7 @@
- import { Component, EventEmitter, Input, Output,  OnInit } from '@angular/core';
+ import { ChangeDetectionStrategy } from '@angular/compiler';
+import { Component, EventEmitter, Input, Output,  OnInit } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-agregar',
@@ -13,9 +15,7 @@ export class AgregarComponent implements OnInit {
   //@OUTPUT COMPONENTE HIJO EMITE VALOR AL PADRE
 
 
-  constructor() { }
-
-  ngOnInit(): void {
+ ngOnInit(): void {
   }
   @Input() nuevo: Personaje={
     nombre: '',
@@ -27,8 +27,10 @@ export class AgregarComponent implements OnInit {
 //DEBEMOS DECIR SU TIPO DE DATO PUEDE SER LA INTERFAZ
 //emite eventos, siempre agregsr el tipo
 //al tener la informacion ya podemos poner el emit
-@Output() onNuevoPersonaje: EventEmitter <Personaje> = new EventEmitter();
+//@Output() onNuevoPersonaje: EventEmitter <Personaje> = new EventEmitter();
 
+   //LAMADA AL SERVICIO, fuera del metodo
+   constructor(private dbzService:DbzService) { }
 
  agregar(){
    //event.preventDefault();//COMPORTAMIENTO NATURAL DEL FORM
@@ -39,8 +41,10 @@ export class AgregarComponent implements OnInit {
 
    //TENIENDO LA DATA YA PODEMOS HACER LA EMISION AL PADRE
    console.log(this.nuevo);//PERSONAJE EN EL QUE ESTAMOS TRABAJANDO
-   this.onNuevoPersonaje.emit(this.nuevo); //emite el valor del tipo agregado
+   //this.onNuevoPersonaje.emit(this.nuevo); //emite el valor del tipo agregado
    
+
+  this.dbzService.agregarPersonaje(this.nuevo);
    
    //this.personajes.push(this.nuevo)
    this.nuevo = {
