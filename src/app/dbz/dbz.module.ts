@@ -5,15 +5,17 @@ import { FormsModule } from '@angular/forms';
 import { PersonajesComponent } from './personajes/personajes.component';
 import { AgregarComponent } from './agregar/agregar.component';
 import { DbzService } from './services/dbz.service';
+import { ListComponent } from './components/list/list.component';
 
 @NgModule({
   declarations: [
-    MainPageComponent,
+    MainPageComponent,//lo que damos alta
     PersonajesComponent,
-    AgregarComponent
+    AgregarComponent,
+    ListComponent //verifica el componente
   ],
   exports:[
-    MainPageComponent
+    MainPageComponent //que se pueda ver, solo necesitamos el main page por que le cargamos los componentes
   ],
   imports: [
     CommonModule, //para poder usar el commun esta importado, AUN QUE

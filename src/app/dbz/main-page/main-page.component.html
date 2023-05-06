@@ -9,7 +9,13 @@
         
         <app-personajes [personajes] = personajes>
         </app-personajes>-->
-        <app-personajes> </app-personajes>
+
+
+        <!--LISTADO 01 BASES
+            <app-personajes> </app-personajes> -->
+
+        <!--Llamamos al nuevo componente 02 BASES-->
+        <app-dbz-list></app-dbz-list>
     </div>
 
 
@@ -24,10 +30,7 @@
         *llamar metodo cuando se dispare
         *evento click, valor del input, target $event
         -->
-        <app-agregar 
-        [nuevo]="nuevo"
-
-        ></app-agregar>
+        <add-dbz-personaje [nuevo]="nuevo" ></add-dbz-personaje>
         <!-- (onNuevoPersonaje)="agregarNuevoPersonaje( $event )" -->
 
     </div>

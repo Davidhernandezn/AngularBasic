@@ -4,7 +4,7 @@ import { Personaje } from '../interfaces/dbz.interface';
 import { DbzService } from '../services/dbz.service';
 
 @Component({
-  selector: 'app-agregar',
+  selector: 'add-dbz-personaje',
   templateUrl: './agregar.component.html',
   styleUrls: ['./agregar.component.css']
 })

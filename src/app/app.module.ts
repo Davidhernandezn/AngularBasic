@@ -14,7 +14,7 @@ import { DbzModule } from "./dbz/dbz.module";
         BrowserModule,
         HeroesModule,
         ContadorModule,
-        DbzModule
+        DbzModule//imortamos modulo para que se use proviene de otro modulo
     ]
 })
 export class AppModule { }
