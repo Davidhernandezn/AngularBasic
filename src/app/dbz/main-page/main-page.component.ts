@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Personaje } from '../interfaces/dbz.interface';
+import { Character, Personaje } from '../interfaces/dbz.interface';
 import { DbzService } from '../services/dbz.service';
 
 @Component({
@@ -8,8 +8,16 @@ import { DbzService } from '../services/dbz.service';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
-
-
+//public characters: Character[]=[];//llamamos interfaz, no se llaman en el modulo
+//MANDA DATOS AL INPUT
+public characterList: Character[]=[{
+  name:'Trunks',
+  power: 10
+},{
+  name:'Goku',
+  power: 140 
+}
+]
   // //arrray
   // personajes: Personaje[] = [
   //   {
