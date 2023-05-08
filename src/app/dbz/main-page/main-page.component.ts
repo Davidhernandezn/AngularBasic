@@ -59,4 +59,11 @@ public characterList: Character[]=[{
     //this.personajes= this.dbzService.personajes;
   }
 
+
+  onNewCharacter(character: Character):void{ //si pones string es lo que  va a esperar o Tipo que tu decida como la interfaz
+    //RECIBIR EVENTOS
+  console.log("MAIN EVENT")
+  console.log(character)
+
+  }
 }

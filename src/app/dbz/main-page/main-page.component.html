@@ -30,9 +30,18 @@
         <!--SOLO AGREGAR NO MOSTRAR
         *llamar metodo cuando se dispare
         *evento click, valor del input, target $event
+      
+        <add-dbz-personaje [nuevo]="nuevo" ></add-dbz-personaje>  -->
+
+        <!--NEW CHARACTER-->
+        <add-dbz-personaje (onNewCharacter)="onNewCharacter($event)" ></add-dbz-personaje>
+ 
+        <!-- (onNuevoPersonaje)="agregarNuevoPersonaje( $event )" 
+        
+        ***************
+        [] PARA MANDAR POR INPUTS, O A ATRIBUTOS PADRE-HIJO
+        () PARA ESCUCHAR EVENTOS
         -->
-        <add-dbz-personaje [nuevo]="nuevo" ></add-dbz-personaje>
-        <!-- (onNuevoPersonaje)="agregarNuevoPersonaje( $event )" -->
 
     </div>
 

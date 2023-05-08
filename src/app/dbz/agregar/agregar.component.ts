@@ -1,6 +1,6 @@
  import { ChangeDetectionStrategy } from '@angular/compiler';
 import { Component, EventEmitter, Input, Output,  OnInit } from '@angular/core';
-import { Personaje } from '../interfaces/dbz.interface';
+import { Character, Personaje } from '../interfaces/dbz.interface';
 import { DbzService } from '../services/dbz.service';
 
 @Component({
@@ -9,6 +9,9 @@ import { DbzService } from '../services/dbz.service';
   styleUrls: ['./agregar.component.css']
 })
 export class AgregarComponent implements OnInit {
+//TU OUTPUT PUEDE SER onNewCharacter O DE OTRA FORMA
+@Output()
+  public onNewCharacter: EventEmitter<Character> = new EventEmitter; //ESCUCHA LO EVENT
 
   //@Input()personajes:Personaje[] = []; //INICIALIZARLO DE 0 Y ESPERARLO COMO INPUT
   
@@ -20,6 +23,11 @@ export class AgregarComponent implements OnInit {
   @Input() nuevo: Personaje={
     nombre: '',
     poder:0
+  }
+
+  public character: Character = {
+    name: '',
+    power: 0
   }
 
 //OUTPUT
@@ -51,5 +59,16 @@ export class AgregarComponent implements OnInit {
      nombre: '',
      poder:0
    }
+
+
+ }
+
+ emitCharacter():void{
+  console.log(this.character);
+  if(this.character.name.length === 0) return; //si es 0 no retorna nada
+
+  this.onNewCharacter.emit(this.character);//emitimos
+  this.character.name = '';
+  this.character.power = 0;
  }
 }
