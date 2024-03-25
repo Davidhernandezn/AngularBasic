@@ -10,6 +10,9 @@ import { DbzService } from '../services/dbz.service';
 export class MainPageComponent implements OnInit {
 //public characters: Character[]=[];//llamamos interfaz, no se llaman en el modulo
 //MANDA DATOS AL INPUT
+//Siempre define que tipo de dato se usara, evita usar any (USA UNA INTERFAZ)
+//DATOS ENVIADOS
+/***AL INSERTAR UN NUEVO VALOR DEBE AGREGARSE AQUI, DEBE EMITIRSE ESE VALOR */
 public characterList: Character[]=[{
   name:'Trunks',
   power: 10
@@ -60,6 +63,7 @@ public characterList: Character[]=[{
   }
 
 
+  //Recibira un character
   onNewCharacter(character: Character):void{ //si pones string es lo que  va a esperar o Tipo que tu decida como la interfaz
     //RECIBIR EVENTOS
   console.log("MAIN EVENT")

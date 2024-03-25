@@ -9,7 +9,9 @@ import { Character } from '../../interfaces/dbz.interface';
 
 export class ListComponent{
 //USAR EN EL EXTERIOR //ESTO SI NO MANDA NADA SERÁ EN EL VALOR POR DEFECTO
+//COMUNICACION con EL EXTERIOR characterList
 @Input()
+//VALOR POR DEFECTO SI NO SE CARGA LA INFO
 public characterList: Character[]=[{
   name:'Trunks',
   power: 10

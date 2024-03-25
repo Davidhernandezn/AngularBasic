@@ -15,6 +15,7 @@
             <app-personajes> </app-personajes> -->
 
         <!--Llamamos al nuevo componente 02 BASES
+        ASIGNAR VALOR
         AGREGAMOS[] = [] POR QUE ES ARRAY (INTERFACE)-->
         <app-dbz-list [characterList]="characterList"></app-dbz-list>
     </div>
@@ -33,7 +34,9 @@
       
         <add-dbz-personaje [nuevo]="nuevo" ></add-dbz-personaje>  -->
 
-        <!--NEW CHARACTER-->
+        <!--NEW CHARACTER
+        PUEDE EMITIR VALORES
+    ESCUCHAR EVENTOS () CUANDO MI COMPONENTE EMITA UN NUEVO VALOR -->
         <add-dbz-personaje (onNewCharacter)="onNewCharacter($event)" ></add-dbz-personaje>
  
         <!-- (onNuevoPersonaje)="agregarNuevoPersonaje( $event )" 

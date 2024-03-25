@@ -9,9 +9,12 @@ import { DbzService } from '../services/dbz.service';
   styleUrls: ['./agregar.component.css']
 })
 export class AgregarComponent implements OnInit {
+
+//EMITIR CHARACTER
 //TU OUTPUT PUEDE SER onNewCharacter O DE OTRA FORMA
-@Output()
-  public onNewCharacter: EventEmitter<Character> = new EventEmitter; //ESCUCHA LO EVENT
+//T es un generico
+@Output()//podemos cambiar el nombre o respetarlo
+public onNewCharacter: EventEmitter<Character> = new EventEmitter; //ESCUCHA LO EVENT
 
   //@Input()personajes:Personaje[] = []; //INICIALIZARLO DE 0 Y ESPERARLO COMO INPUT
   
@@ -63,11 +66,13 @@ export class AgregarComponent implements OnInit {
 
  }
 
+ //AL ENVIAR LA INFO LIMPIAR LOS VALORES 
  emitCharacter():void{
   console.log(this.character);
-  if(this.character.name.length === 0) return; //si es 0 no retorna nada
-
-  this.onNewCharacter.emit(this.character);//emitimos
+  if(this.character.name.length === 0) return; //si es 0 no retorna nada y no lo aceptaremos
+//EMITIMOS VALOR
+//HIJO
+  this.onNewCharacter.emit(this.character);//emitimos EL TIPO character
   this.character.name = '';
   this.character.power = 0;
  }
