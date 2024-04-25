@@ -3,8 +3,9 @@
   <hr class="text-white">
 
   <div class="list-group list-reset">
-    <button class="list-group list-reset">
-      Valorant
+    <button *ngFor="let tag of tags" class="list-group list-reset">
+      <!--USAR PIPE QUE NO DEBE AFECTAR AL VALOR, mayuscula por palabra-->
+      {{ tag | titlecase }}
     </button>
   </div>
 

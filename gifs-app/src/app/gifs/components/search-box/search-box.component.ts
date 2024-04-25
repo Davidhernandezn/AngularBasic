@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { GifsService } from '../../services/gifs.service';
 
 @Component({
   selector: 'app-search-box',
@@ -7,7 +8,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class SearchBoxComponent implements OnInit {
 
-  constructor() { }
+  //PARA USAR EL SERVICIO DEBEMOS IMPORTARLO
+  constructor(private gifsService : GifsService) { }
 
   ngOnInit() {
   }
@@ -21,7 +23,10 @@ export class SearchBoxComponent implements OnInit {
   //FORMA PARA EL VIEWCHILD ES PARA OBTENER UNA REFERENCIA LOCAL VIEWCHILDREN ES UN ARRAY
   searchTag(){
     const newTag = this.tagInput.nativeElement.value;
+    this.gifsService.searchTag(newTag);
     console.log({newTag});
+    //ALTERMINO LIMPIAMOS LA CAJA DE TEXTO
+    this.tagInput.nativeElement.value = '';
   }
 
 
