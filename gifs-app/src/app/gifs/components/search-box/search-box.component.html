@@ -1,2 +1,9 @@
 <h5>Buscar:</h5>
-<input type="text" class="form-control" placeholder="Buscar gifs">
+
+<!-- RECUPERAR VALOR INGRESADO POR EL TEMPLATE USA IDENTIFICADOR Y METODO KEYUP 
+<input type="text" class="form-control" placeholder="Buscar gifs" (keyup.enter)="searchTag(txtTagInput.value)"
+#txtTagInput>-->
+
+<!--PARA VIEW CHILD NO NECESITAMOS PASAR EL VALOR PARA RECUPERARLO-->
+<input type="text" class="form-control" placeholder="Buscar gifs" (keyup.enter)="searchTag()"
+#txtTagInput>
