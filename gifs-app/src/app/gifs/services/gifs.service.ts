@@ -3,10 +3,10 @@ import { Injectable } from '@angular/core';
 //providedIn = HACE QUE ESTE DISPONIBLE EN TODA LA APP QUE INYECTEN EL SERVICIO
 @Injectable({providedIn: 'root'})
 export class GifsService {
-
+    
     //ALMACENAR HISTORIAL de BUSQUEDAS Y DEBE SER PRIVATE YA QUE EN ALGUN OTRO MODULO LO PUEDEN MODIFICAR SIN DARNOS CUENTA
     private _tagsHistory: string[] = []; //LOS ARREGLOS PASAN POR REFERENCIA
-
+    private apiKey: string = 'VS8hOXA6muamqrAjXuaguWwg7s03zUcd'; //API KEY
 
     constructor() { }
     
